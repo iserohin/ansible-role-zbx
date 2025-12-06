@@ -6,7 +6,7 @@
     ansible_httpapi_port: "{{ zabbix_api_port }}"
     ansible_httpapi_use_ssl: "{{ zabbix_api_ssl }}"
     ansible_user: "{{ zabbix_user }}"
-    ansible_httpapi_pass: "{{ zabbix_api_password }}"
+    ansible_httpapi_pass: "{{ hostvars[inventory_hostname].zabbix_api_password }}"
     ansible_zabbix_url_path: ""
   community.zabbix.zabbix_host:
     host_name: "{{ inventory_hostname }}"
